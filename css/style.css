@@ -693,6 +693,11 @@ li:not(.current-achv) .achv-name:hover {
   color: #7a7526;
 }
 
+.link-item a svg {
+  width: 0.5625rem;
+  height: 0.5625rem;
+}
+
 .contact .left-container {
   display: flex;
   flex-direction: column;
