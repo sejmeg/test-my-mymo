@@ -362,12 +362,12 @@ main {
   padding-bottom: 0.125rem;
   max-width: 75%;
 }
-/*
+
 .title h3,
 .date {
   white-space: nowrap;
 }
-*/
+
 .date {
   white-space: nowrap;
 }
@@ -855,6 +855,10 @@ li:not(.current-achv) .achv-name:hover {
   height: 1rem;
 }
 
+.link .sns {
+  fill: #3f3f3f;
+}
+
 .link-item span {
   font-size: 0.75rem;
   font-feature-settings: "palt";
@@ -966,6 +970,7 @@ textarea {
     display: flex;
     flex-direction: column;
     gap: 0;
+    width: fit-content;
   }
 
   .contact .left-container p {
