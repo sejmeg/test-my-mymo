@@ -334,9 +334,14 @@ main {
   font-feature-settings: "palt";
   line-height: 100%;
   padding-bottom: 0.125rem;
+  max-width: 75%;
 }
-
+/*
 .title h3,
+.date {
+  white-space: nowrap;
+}
+*/
 .date {
   white-space: nowrap;
 }
