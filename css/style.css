@@ -1179,7 +1179,8 @@ article {
 
 .blogcard img {
   width: 7.75rem;
-  height: auto;
+  height: 7.75rem;
+  object-fit: cover;
 }
 
 .blogcard-info {
@@ -1281,7 +1282,7 @@ article {
   article {
     margin-top: 15.3125rem;
     padding: 0 1.5rem;
-    width: fit-content;
+    width: 100%;
     gap: 1rem;
   }
 
@@ -1313,6 +1314,16 @@ article {
 
   .post-contents p {
     line-height: 150%;
+  }
+
+  .blogcard {
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .blogcard img {
+    width: 6rem;
+    height: 6rem;
   }
 }
 
