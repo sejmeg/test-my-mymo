@@ -17,6 +17,13 @@ body {
   min-height: 100vh;
 }
 
+@media screen and (max-width: 960px) {
+  body {
+    max-width: initial;
+    width: 100%;
+  }
+}
+
 a {
   text-decoration: none;
   color: #3f3f3f;
@@ -32,7 +39,8 @@ h2,
 h3,
 h4,
 .category-list,
-.category-date {
+.category-date,
+.all {
   text-transform: capitalize;
 }
 
@@ -109,6 +117,23 @@ header li a:hover,
     transform 0.6s ease;
 }
 
+@media screen and (max-width: 960px) {
+  header {
+    padding: 5rem 1.5rem;
+    gap: 1rem;
+    /*margin-top: 3.125rem;*/
+  }
+
+  header svg {
+    width: 15.8125rem;
+    height: 2.4375rem;
+  }
+
+  header ul {
+    gap: 1.5rem;
+  }
+}
+
 /*------------- メイン -------------*/
 main {
   flex: 1;
@@ -117,7 +142,7 @@ main {
   gap: 3.75rem;
   align-items: flex-end;
   margin-top: 15.125rem;
-  padding: 0 7.5rem 0 7.5rem;
+  padding: 0 7.5rem;
 }
 
 .child {
@@ -130,6 +155,20 @@ main {
   display: flex;
   flex-direction: row;
   gap: 3.75rem;
+}
+
+@media screen and (max-width: 960px) {
+  main {
+    flex-direction: column-reverse;
+    gap: 8rem;
+    margin-top: 15.3125rem;
+    padding: 0 1.5rem;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 4rem;
+  }
 }
 
 /*------------- 左サイド -------------*/
@@ -183,6 +222,17 @@ main {
   font-size: 0.75rem;
   line-height: 150%;
   letter-spacing: 0;
+}
+
+@media screen and (max-width: 960px) {
+  .left-container {
+    width: 100%;
+  }
+
+  .prof-img img {
+    width: auto;
+    height: 7.75rem;
+  }
 }
 
 /*------------- 右サイド -------------*/
@@ -400,6 +450,30 @@ main {
   font-size: 1rem;
 }
 
+@media screen and (max-width: 960px) {
+  .right-container {
+    width: 100%;
+    margin: 5rem 0;
+  }
+
+  .h2 img {
+    width: 10.1875rem;
+  }
+
+  .dots-date {
+    justify-content: flex-end;
+  }
+
+  .dots {
+    display: none;
+  }
+
+  .mutter-list {
+    grid-template-columns: repeat(2, 1fr);
+    line-height: 135%;
+  }
+}
+
 /*------------- ヘッダー(Top以外) -------------*/
 .header2 {
   display: flex;
@@ -426,6 +500,22 @@ main {
   justify-content: space-between;
   height: initial;
   max-width: 35.625rem;
+}
+
+@media screen and (max-width: 960px) {
+  .header2 .left-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: initial;
+    max-width: 100%;
+    gap: 0.25rem;
+  }
+
+  .header2 .right-container {
+    display: none;
+  }
 }
 
 /*------------- カテゴリー(アーカイブ共通部含む) -------------*/
@@ -499,6 +589,30 @@ li:not(.current-achv) .achv-name:hover {
   background-position: 0 100%;
 }
 
+@media screen and (max-width: 960px) {
+  .category-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .category-list a {
+    flex: 1;
+    flex-direction: column;
+    gap: 0;
+    align-items: flex-start;
+  }
+
+  .child .left-container {
+    height: fit-content;
+  }
+
+  .child .right-container {
+    margin: 0;
+  }
+}
+
 /*------------- アーカイブ -------------*/
 .archive {
   display: flex;
@@ -549,6 +663,16 @@ li:not(.current-achv) .achv-name:hover {
   margin-bottom: 2rem;
 }
 
+@media screen and (max-width: 960px) {
+  .archive-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+    height: fit-content;
+  }
+}
+
 /*------------- つぶやき -------------*/
 .tag-list {
   display: flex;
@@ -560,7 +684,7 @@ li:not(.current-achv) .achv-name:hover {
   font-size: 0.75rem;
 }
 
-.tag-list li {
+.tag-list a {
   display: inline-flex;
   align-items: center;
   background-color: #fff;
@@ -568,10 +692,12 @@ li:not(.current-achv) .achv-name:hover {
   padding: 0 1rem;
   height: 1.625rem;
   position: relative;
+  color: #89898a;
   overflow: hidden;
+  z-index: 1;
 }
 
-.tag-list li::before {
+.tag-list a::before {
   position: absolute;
   inset: 0;
   content: "";
@@ -580,33 +706,26 @@ li:not(.current-achv) .achv-name:hover {
   transform-origin: center; /* leftにするか悩み中 */
   transition: transform 0.4s ease;
   border-radius: inherit;
-  z-index: 0;
+  z-index: -1;
 }
 
-.tag-list li:hover::before {
+.tag-list a:hover::before {
   transform: scaleX(1);
 }
 
-.tag-list li a {
-  position: relative;
-  z-index: 1;
-  color: #89898a;
-  transition: color 0.3s ease;
-}
-
-.tag-list li:hover a {
+.tag-list a:hover {
   color: #fff;
 }
 
-.tag-list .current-tag {
+.tag-list a.current-tag {
   background-color: #89898a;
 }
 
-.tag-list .current-tag a {
+.tag-list a.current-tag {
   color: #fff;
 }
 
-.tag-list li.current-tag:hover::before {
+.tag-list a.current-tag:hover::before {
   transform: none;
 }
 
@@ -618,6 +737,28 @@ li:not(.current-achv) .achv-name:hover {
 
 .tag {
   color: #7a7526;
+}
+
+@media screen and (max-width: 960px) {
+  .tag-list {
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .mutter2 .mutter-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mutter2 .mutter-item {
+    height: 10.125rem;
+  }
+
+  .mutter2 .mutter-post {
+    font-size: 0.875rem;
+    max-height: 8rem;
+  }
 }
 
 /*------------- About -------------*/
@@ -771,6 +912,45 @@ textarea {
   color: #7a7526;
 }
 
+@media screen and (max-width: 960px) {
+  .about .left-container,
+  .contact .left-container {
+    height: fit-content;
+  }
+
+  .about .left-container img {
+    height: 10.1875rem;
+  }
+
+  .about .right-container,
+  .contact .right-container {
+    margin: 0;
+  }
+
+  .link {
+    gap: 1rem;
+  }
+
+  .sp {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .contact .left-container p {
+    line-height: 150%;
+  }
+
+  .contact-form {
+    gap: 1rem;
+  }
+
+  .form-group {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
 /*------------- ページネーション -------------*/
 .pagenation {
   display: flex;
@@ -801,7 +981,7 @@ article {
   gap: 3.75rem;
   align-items: flex-end;
   margin-top: 15.125rem;
-  padding: 0 7.5rem 0 7.5rem;
+  padding: 0 7.5rem;
 }
 
 .post-heading {
@@ -1066,6 +1246,18 @@ article {
   margin-top: 2.5rem;
 }
 
+@media screen and (max-width: 960px) {
+  article {
+    margin-top: 15.3125rem;
+    padding: 0 1.5rem;
+    width: fit-content;
+  }
+
+  .post-contents {
+    flex-direction: column;
+  }
+}
+
 /*------------- フッター -------------*/
 footer {
   display: flex;
@@ -1077,4 +1269,11 @@ footer {
 
 footer p {
   flex-direction: row;
+}
+
+@media screen and (max-width: 960px) {
+  footer {
+    justify-content: space-between;
+    padding: 7.75rem 1.5rem 3.5rem 1.5rem;
+  }
 }
