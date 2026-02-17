@@ -816,7 +816,8 @@ article {
 .post-contents h2,
 .post-contents h3,
 .post-contents h4,
-.post-pagenation {
+.post-pagenation,
+.article-bottom {
   font-feature-settings: "palt";
   line-height: 115%;
 }
@@ -832,6 +833,10 @@ article {
   color: #89898a;
   font-size: 0.75rem;
   gap: 0.5rem;
+}
+
+.category-date a {
+  color: #89898a;
 }
 
 .post-contents {
@@ -942,6 +947,50 @@ article {
 .post-image span {
   color: #89898a;
   font-size: 0.75rem;
+}
+
+.article-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 0.09375rem dotted #3f3f3f;
+  font-size: 0.75rem;
+}
+
+.blogcard {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  background-color: #fff;
+  padding: 1.5rem;
+}
+
+.blogcard img {
+  width: 7.75rem;
+  height: auto;
+}
+
+.blogcard-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.info .title {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.url {
+  color: #89898a;
+  font-size: 0.625rem;
 }
 
 .pagenations {
