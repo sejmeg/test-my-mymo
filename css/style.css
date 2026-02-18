@@ -660,12 +660,6 @@ li:not(.current-achv) .achv-name:hover {
   .child .right-container {
     margin: 0;
   }
-
-  .current-ctg,
-  .current-achv {
-    font-weight: 500;
-    font-size: 0.9375rem;
-  }
 }
 
 /*------------- アーカイブ -------------*/
@@ -791,7 +785,18 @@ li:not(.current-achv) .achv-name:hover {
 }
 
 .tag {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tag a {
   color: #7a7526;
+}
+
+.mutter2 .mutter-post {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 @media screen and (max-width: 960px) {
@@ -807,12 +812,12 @@ li:not(.current-achv) .achv-name:hover {
   }
 
   .mutter2 .mutter-item {
-    height: 10.125rem;
+    max-height: 9rem;
+    gap: 1rem;
   }
 
   .mutter2 .mutter-post {
     font-size: 0.875rem;
-    max-height: 8rem;
   }
 }
 
