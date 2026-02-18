@@ -219,7 +219,7 @@ main {
 .sns svg {
   width: 1rem;
   height: 1rem;
-  color: #3f3f3f;
+  fill: #3f3f3f;
 }
 
 .about-desc {
@@ -256,7 +256,6 @@ main {
   }
 
   .about-desc {
-    font-size: 0.625rem;
     line-height: 125%;
   }
 }
@@ -326,14 +325,20 @@ main {
   width: 100%;
 }
 
+.post-item > * {
+  position: relative;
+  z-index: 1;
+}
+
 .post-item::before {
   position: absolute;
   left: 0;
   width: 0;
   height: 100%;
   content: "";
-  background-color: #25273f;
-  mix-blend-mode: difference;
+  background-color: #d9d9cc;
+  /*background-color: #25273f;
+  mix-blend-mode: difference;*/
   transition: 0.7s;
 }
 
@@ -641,6 +646,12 @@ li:not(.current-achv) .achv-name:hover {
 
   .child .right-container {
     margin: 0;
+  }
+
+  .current-ctg,
+  .current-achv {
+    font-weight: 500;
+    font-size: 0.9375rem;
   }
 }
 
@@ -1170,7 +1181,7 @@ article {
   flex-direction: column;
   gap: 0.5rem;
   padding-bottom: 1rem;
-  border-bottom: 0.09375rem dotted #3f3f3f;
+  border-bottom: 0.09375rem dotted #89898a;
   font-size: 0.75rem;
 }
 
