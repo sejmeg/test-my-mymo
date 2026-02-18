@@ -477,20 +477,6 @@ main {
   scrollbar-width: none;
 }
 
-/*
-.scroll-a::-webkit-scrollbar {
-  width: 10.75rem;
-}
-
-.scroll-a::-webkit-scrollbar-thumb {
-  background: #89898a; 
-}
-
-.scroll-a::-webkit-scrollbar-track {
-  background: #fff; 
-}
-*/
-
 .mutter-post img {
   width: 100%;
   height: auto;
@@ -505,6 +491,7 @@ main {
 .like {
   display: flex;
   gap: 0.25rem;
+  font-size: 0.875rem;
 }
 
 .mutter .date,
