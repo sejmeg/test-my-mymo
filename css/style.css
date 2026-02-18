@@ -469,10 +469,27 @@ main {
 }
 
 .mutter-post {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   max-height: 5.5rem;
   overflow-y: auto;
   scrollbar-width: none;
 }
+
+/*
+.scroll-a::-webkit-scrollbar {
+  width: 10.75rem;
+}
+
+.scroll-a::-webkit-scrollbar-thumb {
+  background: #89898a; 
+}
+
+.scroll-a::-webkit-scrollbar-track {
+  background: #fff; 
+}
+*/
 
 .mutter-post img {
   width: 100%;
@@ -792,13 +809,13 @@ li:not(.current-achv) .achv-name:hover {
 .tag a {
   color: #7a7526;
 }
-
+/*
 .mutter2 .mutter-post {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-
+*/
 @media screen and (max-width: 960px) {
   .tag-list {
     justify-content: flex-start;
@@ -812,7 +829,7 @@ li:not(.current-achv) .achv-name:hover {
   }
 
   .mutter2 .mutter-item {
-    max-height: 9rem;
+    height: 9rem;
     gap: 1rem;
   }
 
@@ -863,7 +880,9 @@ li:not(.current-achv) .achv-name:hover {
 }
 
 .about .about-desc {
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   font-size: 0.875rem;
 }
 
@@ -991,6 +1010,10 @@ textarea {
     margin: 0;
   }
 
+  .about .about-desc {
+    line-height: 150%;
+  }
+
   .link {
     gap: 1rem;
   }
@@ -1000,6 +1023,10 @@ textarea {
     flex-direction: column;
     gap: 0;
     width: fit-content;
+  }
+
+  .contact .left-container {
+    gap: 0.5rem;
   }
 
   .contact .left-container p {
